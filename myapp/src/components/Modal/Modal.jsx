@@ -1,9 +1,9 @@
+import React from 'react';
+
 import styles from './Modal.module.scss';
 import PropTypes from 'prop-types';
 import listCitys from '../../assets/data';
-
-import React from 'react';
-import AsyncSelect from 'react-select/async';
+import AsyncExample from '../Autocompliter';
 
 const Modal = ({
 	className,
@@ -40,6 +40,7 @@ const Modal = ({
 					<AsyncExample
 						onChange={ (e) => handleInputChange(e) }
 						isMulti
+						listCitys={listCitys}
 						placeholder="введите город"
 						cacheOptions
 						defaultOptions
@@ -58,38 +59,5 @@ Modal.propTypes = {
 	setShowModal: PropTypes.func,
 }
 
-const AsyncExample = ({ defaultOptionValue, ...props }) => {
-	const [value, setValue] = React.useState();
-	const [defaultValue, setDefaultValue] = React.useState();
-
-	React.useEffect(() => {
-		setValue(defaultValue);
-	}, [defaultValue]);
-
-	const loadOptions = (searchKey) => {
-		return new Promise((resolve) => {
-			setTimeout(() => {
-				!defaultValue &&
-			setDefaultValue(listCitys.find((o) => o.value === defaultOptionValue));
-			const filtered = listCitys.filter((o) => o.label.includes(searchKey));
-
-			resolve(filtered);
-		}, 3000);
-	});
-	};
-
-	const onChange = (option) => setValue(option);
-
-	return (
-		<AsyncSelect
-			className={ styles.select }
-			loadOptions={ loadOptions }
-			defaultOptions
-			value={ value }
-			onChange={ onChange }
-		/>
-	);
-};
 
 export default Modal;
-// export default AsyncExample;
