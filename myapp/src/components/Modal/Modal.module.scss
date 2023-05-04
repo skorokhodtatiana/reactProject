@@ -55,3 +55,14 @@
 		transform: translate(-50%, -50%) rotate(45deg);
 	}
 }
+
+.select {
+	min-width: 200px;
+	background-color: green;
+	border-radius: 10px;
+
+	// &:focus {
+	// 	border: 1px solid green;
+	// 	outline: none;
+	// }
+}

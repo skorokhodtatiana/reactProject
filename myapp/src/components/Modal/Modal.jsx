@@ -32,33 +32,31 @@ const Modal = ({
 
 	return (
 		<>
-		{ showModal &&
-			<div className={ styles.container }>
-				<div className={ styles.body }>
-					<div className={ styles.close }></div>
+			{ showModal &&
+				<div className={ styles.container }>
+					<div className={ styles.body }>
+						<div className={ styles.close }></div>
+					</div>
+					<AsyncExample
+						onChange={ (e) => handleInputChange(e) }
+						isMulti
+						placeholder="введите город"
+						cacheOptions
+						defaultOptions
+						value = { inputValue }
+						loadOptions={ promiseOptions }
+					/>
 				</div>
-				<AsyncSelect
-					onChange={(e) => handleInputChange(e)}
-					isMulti
-					placeholder="введите город"
-					cacheOptions
-					defaultOptions
-					value = {inputValue}
-					loadOptions={promiseOptions}
-				/>
-			</div>
-		}
+			}
 		</>
-	)
-}
+	);
+};
 
 Modal.propTypes = {
 	className: PropTypes.string,
 	showModal: PropTypes.bool,
 	setShowModal: PropTypes.func,
 }
-
-export default Modal;
 
 const AsyncExample = ({ defaultOptionValue, ...props }) => {
 	const [value, setValue] = React.useState();
@@ -84,12 +82,14 @@ const AsyncExample = ({ defaultOptionValue, ...props }) => {
 
 	return (
 		<AsyncSelect
-			loadOptions={loadOptions}
+			className={ styles.select }
+			loadOptions={ loadOptions }
 			defaultOptions
-			value={value}
-			onChange={onChange}
+			value={ value }
+			onChange={ onChange }
 		/>
 	);
 };
 
+export default Modal;
 // export default AsyncExample;
