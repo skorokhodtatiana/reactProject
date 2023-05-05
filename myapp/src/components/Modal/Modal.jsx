@@ -11,7 +11,7 @@ const Modal = ({
 	setShowModal
 }) => {
 
-	const [inputValue, setInputValue] = React.useState();
+	const [inputValue, setInputValue] = React.useState('');
 
 	const filterColors = (inputValue) => {
 		return listCitys.filter(i =>
