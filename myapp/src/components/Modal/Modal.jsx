@@ -8,7 +8,8 @@ import AsyncExample from '../Autocompliter';
 const Modal = ({
 	className,
 	showModal,
-	setShowModal
+	setShowModal,
+	handleClick
 }) => {
 
 	const [inputValue, setInputValue] = React.useState('');
@@ -35,7 +36,7 @@ const Modal = ({
 			{ showModal &&
 				<div className={ styles.container }>
 					<div className={ styles.body }>
-						<div className={ styles.close }></div>
+						<div onClick={ handleClick } className={ styles.close }></div>
 					</div>
 					<AsyncExample
 						onChange={ (e) => handleInputChange(e) }
