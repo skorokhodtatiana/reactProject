@@ -37,17 +37,17 @@ const Modal = ({
 				<div className={ styles.container }>
 					<div className={ styles.body }>
 						<div onClick={ handleClick } className={ styles.close }></div>
+						<AsyncExample
+							onChange={ handleInputChange }
+							listCitys={ listCitys }
+							placeholder="введите город"
+							cacheOptions
+							defaultOptions
+							value = { inputValue }
+							loadOptions={ promiseOptions }
+							isClearable
+						/>
 					</div>
-					<AsyncExample
-						onChange={ (e) => handleInputChange(e) }
-						isMulti
-						listCitys={listCitys}
-						placeholder="введите город"
-						cacheOptions
-						defaultOptions
-						value = { inputValue }
-						loadOptions={ promiseOptions }
-					/>
 				</div>
 			}
 		</>
