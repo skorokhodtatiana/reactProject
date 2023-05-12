@@ -2,7 +2,7 @@ import React from 'react';
 import Async from 'react-select/async';
 import styles from './Autocompliter.module.scss';
 
-const AsyncSelect = ({ defaultOptionValue,loadOptions, onChange, value, isClearable, ...props }) => {
+const AsyncSelect = ({ defaultOptionValue,loadOptions, onChange, value, isClearable, placeholder, ...props }) => {
 
 	return (
 		<Async
@@ -13,6 +13,7 @@ const AsyncSelect = ({ defaultOptionValue,loadOptions, onChange, value, isCleara
 			value={ value }
 			onChange={ onChange }
 			isClearable={ isClearable }
+			placeholder={ placeholder }
 		/>
 	);
 };

@@ -40,7 +40,7 @@ const Modal = ({
 						<AsyncExample
 							onChange={ handleInputChange }
 							listCitys={ listCitys }
-							placeholder="введите город"
+							placeholder="Выберите город"
 							cacheOptions
 							defaultOptions
 							value = { inputValue }
