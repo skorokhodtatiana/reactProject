@@ -4,6 +4,7 @@ import styles from './Modal.module.scss';
 import PropTypes from 'prop-types';
 import listCitys from '../../assets/data';
 import AsyncExample from '../Autocompliter';
+import Counter from '../Counter';
 
 const Modal = ({
 	className,
@@ -47,6 +48,7 @@ const Modal = ({
 							loadOptions={ promiseOptions }
 							isClearable
 						/>
+						<Counter/>
 					</div>
 				</div>
 			}
