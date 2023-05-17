@@ -6,6 +6,8 @@ import listCitys from '../../assets/data';
 import AsyncExample from '../Autocompliter';
 import Counter from '../Counter';
 
+import Input from '../Input';
+
 const Modal = ({
 	className,
 	showModal,
@@ -38,6 +40,7 @@ const Modal = ({
 				<div className={ styles.container }>
 					<div className={ styles.body }>
 						<div onClick={ handleClick } className={ styles.close }></div>
+						<Input/>
 						<AsyncExample
 							onChange={ handleInputChange }
 							listCitys={ listCitys }

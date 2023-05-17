@@ -7,7 +7,10 @@ const TInput = {
 	className: PropTypes.string,
 	id: PropTypes.string,
 	value: PropTypes.string,
-	type: PropTypes.string
+	type: PropTypes.string,
+	error: PropTypes.string,
+	placeholder: PropTypes.string,
+	disabled: PropTypes.bool,
 };
 
 const Input = ({
@@ -15,7 +18,14 @@ const Input = ({
 	id,
 	value,
 	type,
+	disabled,
+	placeholder,
+	error,
+	...restProps
 }) => {
+	const textError = error && (
+		<div>{ error }</div>
+	);
 	return (
 		<div className={ className }>
 			<label for='id'></label>
@@ -23,7 +33,11 @@ const Input = ({
 				id={ id }
 				value={ value }
 				type={ type }
+				disabled={ disabled }
+				placeholder={ placeholder }
+				{ ...restProps }
 			></input>
+			{ textError }
 		</div>
 	)
 };
