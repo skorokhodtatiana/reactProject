@@ -11,6 +11,7 @@ const TInput = {
 	error: PropTypes.string,
 	placeholder: PropTypes.string,
 	disabled: PropTypes.bool,
+	onChange: PropTypes.func,
 };
 
 const Input = ({
@@ -21,6 +22,7 @@ const Input = ({
 	disabled,
 	placeholder,
 	error,
+	onChange,
 	...restProps
 }) => {
 	const textError = error && (
@@ -35,6 +37,7 @@ const Input = ({
 				type={ type }
 				disabled={ disabled }
 				placeholder={ placeholder }
+				onChange={ onChange }
 				{ ...restProps }
 			></input>
 			{ textError }
