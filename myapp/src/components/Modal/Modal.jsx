@@ -51,7 +51,7 @@ const Modal = ({
 							loadOptions={ promiseOptions }
 							isClearable
 						/>
-						<Counter/>
+						<Counter count={ 1 }/>
 					</div>
 				</div>
 			}
