@@ -3,21 +3,26 @@ import React from 'react';
 import styles from './Counter.module.scss';
 import Input from '../Input';
 
+const MIN = 1;
+const STEP = 1;
+
 const Counter = ({
-	count
+	count,
+	value: valueProp,
 }) => {
-	const [valueInput, setValueInput] = React.useState(count);
+	const [valueState, setValueState] = React.useState(count || MIN);
+	const value = typeof valueProp != 'undefined' ? valueProp : valueState;
 
 	const handleChange = (val) => {
-		setValueInput(val);
+		setValueState(val);
 	};
 
 	const handlePlus = () => {
-		setValueInput(valueInput + 1);
+		setValueState(value + STEP);
 	};
 
 	const handleMinus = () => {
-		setValueInput(valueInput - 1);
+		setValueState(value - STEP);
 	};
 
 	return (
@@ -26,7 +31,7 @@ const Counter = ({
 			<button onClick={ handlePlus } className={ styles.button }>+</button>
 			<Input
 			className={ styles.input }
-				value={ valueInput }
+				value={ value }
 				onChange={ handleChange }
 			/>
 			<button onClick={ handleMinus } className={ styles.button }>-</button>
