@@ -9,15 +9,15 @@ const Counter = ({
 	const [valueInput, setValueInput] = React.useState(count);
 
 	const handleChange = (val) => {
-		setValueInput(val);
+		setValueInput(val.target.value);
 	};
 
 	const handlePlus = () => {
-		setValueInput(valueInput + 1);
+		setValueInput(Number(valueInput) + 1);
 	};
 
 	const handleMinus = () => {
-		setValueInput(valueInput - 1);
+		setValueInput(Number(valueInput) - 1);
 	};
 
 	return (
@@ -25,7 +25,7 @@ const Counter = ({
 		<div className={ styles.block }>
 			<button onClick={ handlePlus } className={ styles.button }>+</button>
 			<Input
-			className={ styles.input }
+				className={ styles.input }
 				value={ valueInput }
 				onChange={ handleChange }
 			/>

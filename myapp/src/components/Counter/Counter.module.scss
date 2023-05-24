@@ -29,5 +29,11 @@
 	input {
 		width: 15px;
 		border: none;
+
+		&:hover,
+		&:focus,
+		&:active {
+			outline: none;
+		}
 	}
 }
