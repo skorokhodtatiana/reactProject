@@ -17,15 +17,6 @@ const Counter = ({
 		setValueState(val.target.value);
 	};
 
-	// const handlePlus = () => {
-	// 	setValueInput(Number(valueInput) + 1);
-	// };
-
-	// const handleMinus = () => {
-	// 	setValueInput(Number(valueInput) - 1);
-	// 	setValueState(val);
-	// };
-
 	const handlePlus = () => {
 		setValueState(Number(value) + STEP);
 	};
