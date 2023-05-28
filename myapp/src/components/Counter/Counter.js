@@ -9,6 +9,8 @@ const STEP = 1;
 const Counter = ({
 	count,
 	value: valueProp,
+	min = MIN,
+	step = STEP,
 }) => {
 	const [valueState, setValueState] = React.useState(count || MIN);
 	const value = typeof valueProp != 'undefined' ? valueProp : valueState;
@@ -18,11 +20,11 @@ const Counter = ({
 	};
 
 	const handlePlus = () => {
-		setValueState(Number(value) + STEP);
+		setValueState(Number(value) + step);
 	};
 
 	const handleMinus = () => {
-		setValueState(Number(value) - STEP);
+		setValueState(Number(value) - step);
 	};
 
 	return (
@@ -34,7 +36,7 @@ const Counter = ({
 				value={ valueState }
 				onChange={ handleChange }
 			/>
-			<button onClick={ handleMinus } className={ styles.button }>-</button>
+			<button disabled={ min === value } onClick={ handleMinus } className={ styles.button }>-</button>
 		</div>
 		</>
 	)
