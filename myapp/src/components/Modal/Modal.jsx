@@ -34,6 +34,10 @@ const Modal = ({
 		setInputValue(newValue);
 	};
 
+	const onInputChange = (e) => {
+		console.log(e);
+	};
+
 	return (
 		<>
 			{ showModal &&
@@ -50,6 +54,7 @@ const Modal = ({
 							value = { inputValue }
 							loadOptions={ promiseOptions }
 							isClearable
+							onInputChange={ onInputChange }
 						/>
 						<Counter count={ 1 }/>
 					</div>
