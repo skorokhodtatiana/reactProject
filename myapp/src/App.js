@@ -1,17 +1,13 @@
 import React, { useState } from 'react';
 import './App.css';
 import Modal from './components/Modal/Modal';
+import Cart from './components/Cart/Cart';
 
 function App() {
-	const [showModal, setShowModal] = useState(true);
-
-	const closeModal = () => {
-		setShowModal(false);
-	};
 
 	return (
 		<div className="App">
-			<Modal showModal={ showModal } handleClick={ closeModal }/>
+			<Cart/>
 		</div>
 	);
 }
