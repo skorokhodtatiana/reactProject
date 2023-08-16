@@ -11,11 +11,9 @@ const Cart = () => {
 	return (
 		<>
 			<div>
-				<h1>
-					Корзина
-				</h1>
+				<h1>Корзина</h1>
 				<div>
-					{/* <Modal showModal={ showModal } handleClick={ closeModal }/> */}
+					<Modal showModal={ showModal } handleClick={ closeModal }/>
 				</div>
 			</div>
 		</>

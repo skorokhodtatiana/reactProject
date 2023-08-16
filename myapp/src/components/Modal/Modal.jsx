@@ -23,7 +23,7 @@ const Modal = ({
 		);
 	};
 
-	const promiseOptions = inputValue =>
+	const promiseOptions = (inputValue) =>
 		new Promise(resolve => {
 			setTimeout(() => {
 				resolve(filterColors(inputValue));
@@ -35,7 +35,7 @@ const Modal = ({
 	};
 
 	const onInputChange = (e) => {
-		console.log(e);
+		console.log(inputValue);
 	};
 
 	return (
@@ -44,7 +44,6 @@ const Modal = ({
 				<div className={ styles.container }>
 					<div className={ styles.body }>
 						<div onClick={ handleClick } className={ styles.close }></div>
-						<Input/>
 						<AsyncExample
 							onChange={ handleInputChange }
 							listCitys={ listCitys }
@@ -56,7 +55,6 @@ const Modal = ({
 							isClearable
 							onInputChange={ onInputChange }
 						/>
-						<Counter count={ 1 }/>
 					</div>
 				</div>
 			}
